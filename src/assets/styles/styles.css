@@ -1,0 +1,50 @@
+a {
+  all: unset;
+}
+a:visited {
+  color: unset;
+}
+
+li {
+  list-style-type: none;
+}
+
+:active, :hover, :focus {
+  outline: 0;
+  outline-offset: 0;
+}
+
+img {
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+button, a, .transition_0_3 {
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-wrap: inherit;
+  font-family: "Roboto";
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  margin: 0 auto;
+  background-color: var(--background);
+}
+
+/*# sourceMappingURL=styles.css.map */
