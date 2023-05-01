@@ -1,0 +1,26 @@
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.nav a {
+  cursor: pointer;
+  transition: 0.3s;
+}
+@media (min-width: 1025px) {
+  .nav a:hover p {
+    transform: scale(1.1);
+  }
+}
+.nav div {
+  display: none;
+}
+.nav p {
+  font-family: "Montserrat";
+  transition: 0.3s;
+  color: var(--main-text-color);
+  font-size: var(--fs-24);
+  font-weight: 400;
+}
+
+/*# sourceMappingURL=navigation.module.css.map */

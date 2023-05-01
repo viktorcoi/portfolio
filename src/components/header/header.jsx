@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import styles from './header.module.css';
+import Logo from './logo';
+import NavPage from './navigation';
 
 class Header extends Component {
     constructor(props) {
@@ -14,7 +16,11 @@ class Header extends Component {
     render() {
         return (
             <header className={styles.header}>
-                <input type='checkbox' onChange={this.handleCheckboxChange}></input>
+                <div className={styles.wrapper}>
+                    <Logo/>
+                    <input type='checkbox' onChange={this.handleCheckboxChange}></input>
+                    <NavPage/>
+                </div>
             </header>
         );
     }

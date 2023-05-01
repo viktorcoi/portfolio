@@ -1,0 +1,40 @@
+.logo {
+  cursor: pointer;
+  position: relative;
+  transition: 0.3s;
+  width: max(3.125em, 40px);
+  height: max(2.875em, 37px);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: var(--logo-main);
+}
+.logo::after {
+  content: "";
+  transition: 0.3s;
+  position: absolute;
+  width: max(2.375em, 30px);
+  height: max(2.375em, 31px);
+  background-position: center;
+  background-size: 38px;
+  background-repeat: no-repeat;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-image: var(--logo-second);
+}
+@media (min-width: 1025px) {
+  .logo:hover {
+    background-image: var(--logo-hover);
+  }
+  .logo:hover::after {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+  }
+}
+
+/*# sourceMappingURL=logo.module.css.map */

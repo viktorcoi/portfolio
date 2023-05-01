@@ -27,10 +27,8 @@ class Background extends Component {
     draw = () => {
         this.ctx.fillStyle = this.isCheckedTheme ? 'rgba(226, 226, 226, 0.05)' : 'rgba(38, 38, 38, 0.05)';
         this.ctx.fillRect(0, 0, this.backMatrixRef.current.width, this.backMatrixRef.current.height);
-
         this.ctx.fillStyle = this.isCheckedTheme ? '#232323' : '#E2E2E2';
         this.ctx.font = this.font_size + 'px arial';
-
         for (let i = 0; i < this.drops.length; i++) {
             let text = this.matrix[Math.floor(Math.random() * this.matrix.length)];
             this.ctx.fillText(text, i * this.font_size, this.drops[i] * this.font_size);
@@ -54,7 +52,10 @@ class Background extends Component {
         return (
             <StyleTheme.Consumer>
                 {(context) => {
-                    this.isCheckedTheme = context.isCheckedTheme;
+                    const newIsCheckedTheme = context.isCheckedTheme;
+                    if (this.isCheckedTheme !== newIsCheckedTheme)
+                        this.resizebackMatrix();
+                    this.isCheckedTheme = newIsCheckedTheme;
                     return (
                         <canvas className={styles.background} ref={this.backMatrixRef}></canvas>
                     );
